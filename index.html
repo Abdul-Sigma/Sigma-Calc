@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma-Calc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sigma-Calc Main Container -->
+    <div class="calculator-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Sigma-Calc</h1>
+            <div class="toggle-mode">
+                <button id="toggle-theme">🌙 Dark Mode</button>
+            </div>
+        </div>
+
+        <!-- Calculator Section -->
+        <div class="calculator">
+            <!-- Display Section -->
+            <div class="display">
+                <div id="history"></div>
+                <div id="output">0</div>
+            </div>
+
+            <!-- Button Grid -->
+            <div class="buttons">
+                <!-- Memory Functions -->
+                <button class="btn memory" onclick="memoryStore()">M+</button>
+                <button class="btn memory" onclick="memoryRecall()">MR</button>
+                <button class="btn memory" onclick="memoryClear()">MC</button>
+                <button class="btn operator" onclick="clearDisplay()">C</button>
+
+                <!-- Basic Numbers and Operators -->
+                <button class="btn" onclick="appendToDisplay('7')">7</button>
+                <button class="btn" onclick="appendToDisplay('8')">8</button>
+                <button class="btn" onclick="appendToDisplay('9')">9</button>
+                <button class="btn operator" onclick="appendToDisplay('/')">÷</button>
+
+                <button class="btn" onclick="appendToDisplay('4')">4</button>
+                <button class="btn" onclick="appendToDisplay('5')">5</button>
+                <button class="btn" onclick="appendToDisplay('6')">6</button>
+                <button class="btn operator" onclick="appendToDisplay('*')">×</button>
+
+                <button class="btn" onclick="appendToDisplay('1')">1</button>
+                <button class="btn" onclick="appendToDisplay('2')">2</button>
+                <button class="btn" onclick="appendToDisplay('3')">3</button>
+                <button class="btn operator" onclick="appendToDisplay('-')">−</button>
+
+                <button class="btn" onclick="appendToDisplay('0')">0</button>
+                <button class="btn" onclick="appendToDisplay('.')">.</button>
+                <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+
+                <!-- Toggle Scientific Mode -->
+                <button id="toggle-scientific">Scientific Mode</button>
+            </div>
+
+            <!-- Scientific Functions -->
+            <div id="scientific-functions" class="hidden">
+                <button class="btn" onclick="scientificFunction('sin')">sin</button>
+                <button class="btn" onclick="scientificFunction('cos')">cos</button>
+                <button class="btn" onclick="scientificFunction('tan')">tan</button>
+                <button class="btn" onclick="scientificFunction('sqrt')">√</button>
+                <button class="btn" onclick="scientificFunction('log')">log</button>
+                <button class="btn" onclick="scientificFunction('exp')">eˣ</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
